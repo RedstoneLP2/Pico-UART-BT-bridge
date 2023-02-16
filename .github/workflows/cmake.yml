@@ -82,10 +82,14 @@ jobs:
         path: ${{github.workspace}}/build/bt_serial.dis
         
     - name: Release
-      uses: fnkr/github-action-ghr@v1
-      if: startsWith(github.ref, 'refs/tags/')
+      uses: ChanTsune/release-with-commit@v2.8.0
+      with:
+          regexp: "Release ((\\d+([.]\\d+)*)-(alpha|beta|rc)\\d*)((\\s|\\S)*)"
+          regexp_options: "us"
+          release_name: "version $1"
+          tag_name: "v$1"
+          body: "$5"
+          draft: false
+          prerelease: false
       env:
-          GHR_COMPRESS: xz
-          GHR_PATH: ${{github.workspace}}/build/bin/bt_serial.uf2
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        
+        GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}' # This token is provided by Actions, you do not need to create your own token
