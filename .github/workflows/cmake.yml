@@ -86,6 +86,6 @@ jobs:
       if: startsWith(github.ref, 'refs/tags/')
       env:
           GHR_COMPRESS: xz
-          GHR_PATH: ${{github.workspace}}/build/bin/
+          GHR_PATH: ${{github.workspace}}/build/bin/bt_serial.uf2
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
