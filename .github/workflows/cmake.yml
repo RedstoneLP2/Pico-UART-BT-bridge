@@ -39,7 +39,7 @@ jobs:
     # Artifact name
         name: bt_serial_UF2 # optional, default is artifact
     # A file, directory or wildcard pattern that describes what to upload
-        path: ${{github.workspace}}/build/bt_serial.uf2
+        path: ${{github.workspace}}/build/bin/bt_serial.uf2
  
     - name: Upload HEX Build Artifact
       uses: actions/upload-artifact@v3.1.2
@@ -86,6 +86,6 @@ jobs:
       if: startsWith(github.ref, 'refs/tags/')
       env:
           GHR_COMPRESS: xz
-          GHR_PATH: build/bin/
+          GHR_PATH: ${{github.workspace}}/build/bin/
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
