@@ -1,13 +1,15 @@
 # Set minimum required version of CMake
 cmake_minimum_required(VERSION 3.12)
 set(PICO_BOARD pico_w)
+set(PICO_SDK_FETCH_FROM_GIT on)
 
 set(BTSTACK_ROOT ${PICO_SDK_PATH}/lib/btstack)
 set(BTSTACK_EXAMPLE_PATH ${BTSTACK_ROOT}/example)
 set(BTSTACK_3RD_PARTY_PATH ${BTSTACK_ROOT}/3rd-party)
 
+
 # Include build functions from Pico SDK
-include($ENV{PICO_SDK_PATH}/external/pico_sdk_import.cmake)
+include(pico_sdk_import.cmake)
 
 # Set name of project (as PROJECT_NAME) and C/C++ standards
 project(bt_serial C CXX ASM)
