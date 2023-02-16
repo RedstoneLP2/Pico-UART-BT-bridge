@@ -9,3 +9,4 @@ I had one lying around, wanted to [add bluetooth to my Multimeter](https://www.m
 - `mkdir build && cd build`
 - `cmake ..`
 - `make -j${nproc}`
+- The uf2 file should be in the "bin" directory
