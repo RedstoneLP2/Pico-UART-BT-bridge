@@ -4,9 +4,8 @@ set(PICO_BOARD pico_w)
 set(PICO_SDK_FETCH_FROM_GIT on)
 
 set(BTSTACK_ROOT ${PICO_SDK_PATH}/lib/btstack)
-set(BTSTACK_EXAMPLE_PATH ${BTSTACK_ROOT}/example)
-set(BTSTACK_3RD_PARTY_PATH ${BTSTACK_ROOT}/3rd-party)
 
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ./bin)
 
 # Include build functions from Pico SDK
 include(pico_sdk_import.cmake)
